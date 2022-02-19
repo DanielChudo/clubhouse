@@ -1,10 +1,10 @@
-import StepsInfo from '../../stepsInfo';
+import StepInfo from '../../stepInfo';
 import s from './EnterNameStep.module.css';
 
 function EnterNameStep() {
   return (
     <div id="step-block">
-      <StepsInfo
+      <StepInfo
         icon="/static/man.png"
         alt="your name?"
         title="What's your full name?"

@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import s from './StepsInfo.module.css';
+import s from './StepInfo.module.css';
 
-function StepsInfo({icon, alt, title, description}) {
+function StepInfo({icon, alt, title, description}) {
   return (
-    <div id={s.stepsInfoBlock}>
+    <div id={s.stepInfoBlock}>
       <img
         src={icon}
         alt={alt}
@@ -16,4 +16,4 @@ function StepsInfo({icon, alt, title, description}) {
   );
 }
 
-export default StepsInfo;
+export default StepInfo;

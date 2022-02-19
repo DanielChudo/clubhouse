@@ -1,24 +1,76 @@
 body {
-  background-color: #f3eee5;
+  background-color: #f3efe4;
 }
 
-h1 {
+h3 {
   font-size: 1.6rem;
+  font-weight: 700;
 }
 
 button {
   font-size: 1rem;
   padding: 0.8rem 1.4rem 0.8rem 1.4rem;
-  background-color: #5477ab;
+  background-color: #5677ad;
   color: #fff;
   border: none;
   border-radius: 2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5e81bb;
+}
+
+button:active {
+  background-color: #5270a3;
+  transform: translateY(1px);
+}
+
+button img {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+input {
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 1px solid #e3e3e3;
+  border-radius: 1rem;
+  padding: 0.8rem;
 }
 
 .container {
   display: inline-block;
-  padding: 5rem;
+  padding: 4rem;
   background-color: #fff;
-  border: solid 1px #eae7e0;
+  border: solid 1px #e3e3e3;
   border-radius: 1rem;
+}
+
+#step-block .container > div,
+#step-block .container > h3,
+#step-block .container > p,
+#step-block .container > input {
+  margin-bottom: 2rem;
+}
+
+#step-block {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+}
+
+#step-block p {
+  white-space: nowrap;
+  font-weight: 600;
+  line-height: 2;
+}
+
+#step-block span {
+  font-size: 0.9rem;
+  display: block;
+  font-weight: 600;
+  color: #5477ab;
 }

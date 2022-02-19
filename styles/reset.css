@@ -172,5 +172,6 @@ hr {
 
 input,
 select {
+  font-family: 'Nunito';
   vertical-align: middle;
 }

@@ -26,6 +26,10 @@ button:active {
   transform: translateY(1px);
 }
 
+label {
+  cursor: pointer;
+}
+
 button img {
   display: inline-block;
   margin-left: 0.5rem;
@@ -39,6 +43,10 @@ input {
   padding: 0.8rem;
 }
 
+input:focus {
+  outline: none;
+}
+
 .container {
   display: inline-block;
   padding: 4rem;
@@ -50,7 +58,8 @@ input {
 #step-block .container > div,
 #step-block .container > h3,
 #step-block .container > p,
-#step-block .container > input {
+#step-block .container > input,
+#step-block .container > label {
   margin-bottom: 2rem;
 }
 
@@ -68,9 +77,14 @@ input {
   line-height: 2;
 }
 
-#step-block span {
+#step-block span,
+#step-block label {
   font-size: 0.9rem;
   display: block;
   font-weight: 600;
   color: #5477ab;
+}
+
+.avatar {
+  border-radius: 2rem;
 }

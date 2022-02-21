@@ -22,15 +22,15 @@ const ChooseAvatarStep: FC<StepProps> = ({ onNextStep }) => {
         description="Choose your best photo"
       />
       <div className="container">
-        <div id={s.chosenAvatarBlock}>
+        <label htmlFor="chooseAvatarButton" id={s.chosenAvatarBlock}>
           <img
             className="avatar"
             alt="avatar"
-            src={avatarImage || '/static/no-avatar.png'}
+            src={avatarImage || '/static/default-avatar.png'}
             width={120}
             height={120}
           />
-        </div>
+        </label>
         <label htmlFor="chooseAvatarButton">
           Choose a different photo
         </label>

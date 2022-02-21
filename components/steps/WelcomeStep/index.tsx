@@ -1,7 +1,8 @@
-import Image from 'next/image';
+import { FC } from 'react';
+import { StepProps } from '../../../types';
 import s from './WelcomeStep.module.css';
 
-function WelcomeStep() {
+const WelcomeStep: FC<StepProps> = ({ onNextStep }) => {
   return (
     <div id="step-block">
       <div className="container">
@@ -21,7 +22,7 @@ function WelcomeStep() {
           <br />
           gradually to make sure nothing breaks :)
         </p>
-        <button id={s.loginButton}>
+        <button id={s.loginButton} onClick={onNextStep}>
           Get your username
           <img src="/static/arrow.svg" />
         </button>

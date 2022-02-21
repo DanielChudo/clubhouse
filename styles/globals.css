@@ -26,6 +26,11 @@ button:active {
   transform: translateY(1px);
 }
 
+button:disabled {
+  background-color: #cdcbc4;
+  cursor: default;
+}
+
 label {
   cursor: pointer;
 }
@@ -48,6 +53,7 @@ input:focus {
 }
 
 .container {
+  min-width: 20rem;
   display: inline-block;
   padding: 4rem;
   background-color: #fff;

@@ -1,8 +1,9 @@
 import { FC, useState } from 'react';
+import { StepProps } from '../../../types';
 import StepInfo from '../../stepInfo';
 import s from './ChooseAvatarStep.module.css';
 
-const ChooseAvatarStep: FC = () => {
+const ChooseAvatarStep: FC<StepProps> = ({ onNextStep }) => {
   const [avatarImage, setAvatarImage] = useState('');
 
   const onFileChange = (e) => {
@@ -24,7 +25,8 @@ const ChooseAvatarStep: FC = () => {
         <div id={s.chosenAvatarBlock}>
           <img
             className="avatar"
-            src={avatarImage}
+            alt="avatar"
+            src={avatarImage || '/static/no-avatar.png'}
             width={120}
             height={120}
           />
@@ -38,7 +40,7 @@ const ChooseAvatarStep: FC = () => {
           onChange={onFileChange}
           hidden
         />
-        <button>
+        <button onClick={onNextStep} disabled={!avatarImage}>
           Next
           <img src="/static/arrow.svg" />
         </button>

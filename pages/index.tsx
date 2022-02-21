@@ -1,20 +1,22 @@
+import { FC, useState } from 'react';
 import Head from 'next/head';
-import { useState } from 'react';
 import ChooseAvatarStep from '../components/steps/ChooseAvatarStep';
 import EnterNameStep from '../components/steps/EnterNameStep';
 import WelcomeStep from '../components/steps/WelcomeStep';
+import { StepProps } from '../types';
 
 const stepsComponents = [WelcomeStep, EnterNameStep, ChooseAvatarStep];
 
-function Home() {
-  const [stepNumber, setStepNumber] = useState(2);
-  const Step = stepsComponents[stepNumber];
+const Home: FC = () => {
+  const [stepNumber, setStepNumber] = useState(0);
+  const Step: FC<StepProps> = stepsComponents[stepNumber];
+
   return (
     <>
       <Head>
         <title>Clubhouse: The Social Audio App</title>
       </Head>
-      <Step />
+      <Step onNextStep={() => setStepNumber((prevStepNumber) => prevStepNumber + 1)}/>
     </>
   );
 }

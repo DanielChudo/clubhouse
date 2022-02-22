@@ -1,8 +1,11 @@
+import React, { FC } from 'react';
 import '../styles/reset.css';
 import '../styles/globals.css';
+import { AppProps } from 'next/app';
 
-function App({ Component, pageProps }) {
+const App: FC<AppProps> = ({ Component, pageProps }) => {
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Component {...pageProps} />;
-}
+};
 
 export default App;

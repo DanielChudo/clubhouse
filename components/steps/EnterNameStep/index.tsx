@@ -1,9 +1,9 @@
-import { FC, useState } from 'react';
-import { StepProps } from '../../../types';
+import React, { FC, useState } from 'react';
+import { IStepProps } from '../../../types';
 import StepInfo from '../../stepInfo';
 import s from './EnterNameStep.module.css';
 
-const EnterNameStep: FC<StepProps> = ({ onNextStep }) => {
+const EnterNameStep: FC<IStepProps> = ({ onNextStep }) => {
   const [fullname, setFullname] = useState('');
 
   return (
@@ -15,14 +15,19 @@ const EnterNameStep: FC<StepProps> = ({ onNextStep }) => {
         description="People use real names on Clubhouse :) Thnx!"
       />
       <div className="container">
-        <input value={fullname} onChange={(e) => setFullname(e.target.value)} id={s.inputFullName} placeholder="Enter fullname" />
-        <button onClick={onNextStep} disabled={!fullname}>
+        <input
+          value={fullname}
+          onChange={(e) => setFullname(e.target.value)}
+          id={s.inputFullName}
+          placeholder="Enter fullname"
+        />
+        <button onClick={onNextStep} disabled={!fullname} type="submit">
           Next
-          <img src="/static/arrow.svg" />
+          <img src="/static/arrow.svg" alt="next" />
         </button>
       </div>
     </div>
   );
-}
+};
 
 export default EnterNameStep;

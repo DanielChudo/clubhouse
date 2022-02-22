@@ -1,14 +1,13 @@
-import { FC, useState } from 'react';
-import { StepProps } from '../../../types';
+import React, { ChangeEvent, FC, useState } from 'react';
+import { IStepProps } from '../../../types';
 import StepInfo from '../../stepInfo';
 import s from './ChooseAvatarStep.module.css';
 
-const ChooseAvatarStep: FC<StepProps> = ({ onNextStep }) => {
+const ChooseAvatarStep: FC<IStepProps> = ({ onNextStep }) => {
   const [avatarImage, setAvatarImage] = useState('');
 
-  const onFileChange = (e) => {
-    // add optional chaining
-    if (e.target.files && e.target.files[0]) {
+  const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files?.[0]) {
       setAvatarImage(URL.createObjectURL(e.target.files[0]));
     }
   };
@@ -31,22 +30,20 @@ const ChooseAvatarStep: FC<StepProps> = ({ onNextStep }) => {
             height={120}
           />
         </label>
-        <label htmlFor="chooseAvatarButton">
-          Choose a different photo
-        </label>
+        <label htmlFor="chooseAvatarButton">Choose a different photo</label>
         <input
           id="chooseAvatarButton"
           type="file"
           onChange={onFileChange}
           hidden
         />
-        <button onClick={onNextStep} disabled={!avatarImage}>
+        <button onClick={onNextStep} disabled={!avatarImage} type="submit">
           Next
-          <img src="/static/arrow.svg" />
+          <img src="/static/arrow.svg" alt="next" />
         </button>
       </div>
     </div>
   );
-}
+};
 
 export default ChooseAvatarStep;

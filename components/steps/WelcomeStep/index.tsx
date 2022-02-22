@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { StepProps } from '../../../types';
+import React, { FC } from 'react';
+import { IStepProps } from '../../../types';
 import s from './WelcomeStep.module.css';
 
-const WelcomeStep: FC<StepProps> = ({ onNextStep }) => {
+const WelcomeStep: FC<IStepProps> = ({ onNextStep }) => {
   return (
     <div id="step-block">
       <div className="container">
@@ -22,14 +22,14 @@ const WelcomeStep: FC<StepProps> = ({ onNextStep }) => {
           <br />
           gradually to make sure nothing breaks :)
         </p>
-        <button id={s.loginButton} onClick={onNextStep}>
+        <button id={s.loginButton} onClick={onNextStep} type="button">
           Get your username
-          <img src="/static/arrow.svg" />
+          <img src="/static/arrow.svg" alt="next" />
         </button>
         <span>Have an invite text? Sign in</span>
       </div>
     </div>
   );
-}
+};
 
 export default WelcomeStep;

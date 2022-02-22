@@ -23,7 +23,7 @@ const EnterNameStep: FC<IStepProps> = ({ onNextStep }) => {
         />
         <button onClick={onNextStep} disabled={!fullname} type="submit">
           Next
-          <img src="/static/arrow.svg" alt="next" />
+          <img src="/static/forward-arrow.svg" alt="next" />
         </button>
       </div>
     </div>

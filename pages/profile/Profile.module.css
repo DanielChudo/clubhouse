@@ -1,0 +1,34 @@
+#back {
+  display: inline-flex;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+#back img {
+  margin-right: 0.5rem;
+}
+
+#info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#info div {
+  display: flex;
+  flex-direction: column;
+}
+
+#username {
+  opacity: 0.5;
+  margin-top: 0.5rem;
+}
+
+#followButton {
+  font-weight: 700;
+  background-color: transparent;
+  color: #5677ad;
+  /* inner border */
+  box-shadow: inset 0px 0px 0px 2px #5677ad;
+}

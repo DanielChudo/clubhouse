@@ -1,0 +1,17 @@
+#header {
+  display: flex;
+  padding: 1rem 0;
+  margin-bottom: 3rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+#header div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#avatar {
+  cursor: pointer;
+}

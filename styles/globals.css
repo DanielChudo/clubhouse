@@ -1,15 +1,26 @@
 body {
   background-color: #f3efe4;
+  padding: 0 3rem;
 }
 
-h3 {
+h2 {
   font-size: 1.6rem;
   font-weight: 700;
 }
 
+h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+p {
+  font-weight: 600;
+  line-height: 2;
+}
+
 button {
   font-size: 1rem;
-  padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+  padding: 0.6rem 1.6rem 0.6rem 1.6rem;
   background-color: #5677ad;
   color: #fff;
   border: none;
@@ -81,8 +92,6 @@ input:focus {
 
 #step-block p {
   white-space: nowrap;
-  font-weight: 600;
-  line-height: 2;
 }
 
 #step-block span,
@@ -90,8 +99,4 @@ input:focus {
   font-size: 0.9rem;
   font-weight: 600;
   color: #5477ab;
-}
-
-.avatar {
-  border-radius: 2rem;
 }

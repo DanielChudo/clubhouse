@@ -1,14 +1,15 @@
 import React, { ChangeEvent, FC, useState } from 'react';
 import { IStepProps } from '../../../types';
+import Avatar from '../../Avatar';
 import StepInfo from '../../stepInfo';
 import s from './ChooseAvatarStep.module.css';
 
 const ChooseAvatarStep: FC<IStepProps> = ({ onNextStep }) => {
-  const [avatarImage, setAvatarImage] = useState('');
+  const [avatarSrc, setAvatarSrc] = useState('');
 
   const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.[0]) {
-      setAvatarImage(URL.createObjectURL(e.target.files[0]));
+      setAvatarSrc(URL.createObjectURL(e.target.files[0]));
     }
   };
 
@@ -22,13 +23,7 @@ const ChooseAvatarStep: FC<IStepProps> = ({ onNextStep }) => {
       />
       <div className="container">
         <label htmlFor="chooseAvatarButton" id={s.chosenAvatarBlock}>
-          <img
-            className="avatar"
-            alt="avatar"
-            src={avatarImage || '/static/default-avatar.png'}
-            width={120}
-            height={120}
-          />
+          <Avatar src={avatarSrc} alt="avatar" width={120} height={120} />
         </label>
         <label htmlFor="chooseAvatarButton">Choose a different photo</label>
         <input
@@ -37,9 +32,9 @@ const ChooseAvatarStep: FC<IStepProps> = ({ onNextStep }) => {
           onChange={onFileChange}
           hidden
         />
-        <button onClick={onNextStep} disabled={!avatarImage} type="submit">
+        <button onClick={onNextStep} disabled={!avatarSrc} type="submit">
           Next
-          <img src="/static/arrow.svg" alt="next" />
+          <img src="/static/forward-arrow.svg" alt="next" />
         </button>
       </div>
     </div>

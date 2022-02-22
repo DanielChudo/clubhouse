@@ -1,11 +1,10 @@
 import React, { FC, useState } from 'react';
 import Head from 'next/head';
-import ChooseAvatarStep from '../components/steps/ChooseAvatarStep';
-import EnterNameStep from '../components/steps/EnterNameStep';
-import WelcomeStep from '../components/steps/WelcomeStep';
 import { IStepProps } from '../types';
+import { ChooseAvatarStep, EnterNameStep, WelcomeStep } from '../components';
+import Profile from './profile/[username]';
 
-const stepsComponents = [WelcomeStep, EnterNameStep, ChooseAvatarStep];
+const stepsComponents = [WelcomeStep, EnterNameStep, ChooseAvatarStep, Profile];
 
 const Home: FC = () => {
   const [stepNumber, setStepNumber] = useState(0);

@@ -13,6 +13,11 @@ h3 {
   font-weight: 700;
 }
 
+h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 p {
   font-weight: 600;
   line-height: 2;
@@ -64,39 +69,7 @@ input:focus {
 }
 
 .container {
-  min-width: 20rem;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem;
   background-color: #fff;
   border: solid 1px #e3e3e3;
   border-radius: 1rem;
-}
-
-#step-block .container > div,
-#step-block .container > h3,
-#step-block .container > p,
-#step-block .container > input,
-#step-block .container > label {
-  margin-bottom: 2rem;
-}
-
-#step-block {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  text-align: center;
-}
-
-#step-block p {
-  white-space: nowrap;
-}
-
-#step-block span,
-#step-block label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #5477ab;
 }

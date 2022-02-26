@@ -1,0 +1,60 @@
+.card {
+  /* width: 20rem; */
+  padding: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
+}
+
+.avatars {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.lastAvatar {
+  margin-left: -2rem;
+  position: relative;
+  top: 1.5rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.listeners {
+  list-style: none;
+}
+
+.listeners li {
+  margin-bottom: 0.5rem;
+}
+
+.listeners li:last-child {
+  margin-bottom: 1rem;
+}
+
+.listeners li img {
+  margin-left: 0.2rem;
+}
+
+.details {
+  list-style: none;
+  color: #a4a29d;
+  display: flex;
+}
+
+.details li {
+  margin-right: 1rem;
+}
+
+.details li img {
+  margin-left: 0.2rem;
+}

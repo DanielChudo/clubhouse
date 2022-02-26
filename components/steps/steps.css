@@ -1,0 +1,34 @@
+#step-block .container {
+  min-width: 20rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
+
+#step-block .container > div,
+#step-block .container > h3,
+#step-block .container > p,
+#step-block .container > input,
+#step-block .container > label {
+  margin-bottom: 2rem;
+}
+
+#step-block {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+}
+
+#step-block p {
+  white-space: nowrap;
+}
+
+#step-block span,
+#step-block label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5477ab;
+}

@@ -1,0 +1,19 @@
+#menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#startRoomButton {
+  background-color: #20bd5f;
+}
+
+#startRoomButton:hover {
+  background-color: #22c965;
+}
+
+#startRoomButton:active {
+  background-color: #20b65c;
+  transform: translateY(1px);
+}

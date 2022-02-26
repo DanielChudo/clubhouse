@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import React, { FC } from 'react';
-import { Avatar } from '..';
+import Link from 'next/link';
+import Avatar from '../Avatar';
 import s from './Header.module.css';
 
 const Header: FC = () => {
@@ -13,16 +13,16 @@ const Header: FC = () => {
           width={40}
           height={40}
         />
-        <h3>Clubhouse</h3>
+        <h4>Clubhouse</h4>
       </div>
       <Link href="/profile/Daniel">
         <div id={s.avatar}>
-          <h3>Tchudnovski Daniel</h3>
+          <h4>Tchudnovski Daniel</h4>
           <Avatar
             src="/static/default-avatar.png"
             alt="avatar"
-            width={50}
-            height={50}
+            width={45}
+            height={45}
           />
         </div>
       </Link>

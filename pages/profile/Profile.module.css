@@ -1,13 +1,3 @@
-#back {
-  display: inline-flex;
-  margin-bottom: 2rem;
-  cursor: pointer;
-}
-
-#back img {
-  margin-right: 0.5rem;
-}
-
 #info {
   display: flex;
   align-items: center;

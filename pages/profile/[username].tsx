@@ -1,29 +1,12 @@
 import React, { FC } from 'react';
-// import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { Avatar, Header } from '../../components';
+import { Avatar, BackButton, Header } from '../../components';
 import s from './Profile.module.css';
 
 const Profile: FC = () => {
-  // let { username } = useRouter().query;
-
-  // if (!username) {
-  //   return <div>username пуст</div>;
-  // }
-
-  // if (Array.isArray(username)) {
-  //   username = username[0];
-  // }
-
   return (
     <>
       <Header />
-      <Link href="/rooms">
-        <div id={s.back}>
-          <img src="/static/back-arrow.svg" alt="back" />
-          <h3>Back</h3>
-        </div>
-      </Link>
+      <BackButton title="Back" href="/rooms" />
       <div id={s.info}>
         <Avatar
           src="/static/default-avatar.png"

@@ -21,7 +21,12 @@ const EnterNameStep: FC<IStepProps> = ({ onNextStep }) => {
           id={s.inputFullName}
           placeholder="Enter fullname"
         />
-        <button onClick={onNextStep} disabled={!fullname} type="submit">
+        <button
+          className="nextButton"
+          onClick={onNextStep}
+          disabled={!fullname}
+          type="submit"
+        >
           Next
           <img src="/static/forward-arrow.svg" alt="next" />
         </button>

@@ -1,40 +1,57 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import axios from 'axios';
+import { GetServerSideProps } from 'next/types';
 import { Header, RoomCard } from '../../components';
 import s from './Rooms.module.css';
+import { IRoomCardProps } from '../../types';
 
-const Rooms: FC = () => {
+interface IRoomsProps {
+  rooms: IRoomCardProps[];
+}
+
+const Rooms: FC<IRoomsProps> = ({ rooms }) => {
   return (
     <>
       <Head>
         <title>Clubhouse: Rooms</title>
       </Head>
       <Header />
-      <div id={s.menu}>
-        <h2>All rooms</h2>
-        <button type="button" id={s.startRoomButton}>
+      {/* button changes div height */}
+      <div id={s.menu} style={{ height: '1.4rem' }}>
+        <h3>All rooms</h3>
+        <button type="button" id={s.startButton}>
           Start room
         </button>
       </div>
-      <div>
-        <Link href="/rooms/test">
-          <a>
-            <RoomCard
-              title="Взлетит ли биткоин?"
-              listeners={['Vasya Pupkin', 'David Marchellis', 'Mark Kevinov']}
-              listenersCount={45}
-              speakersAvatars={[
-                'https://mota.ru/upload/resize/320/240/upload/wallpapers/2021/06/05/15/14/72810/blonde-girl-dress-beauty-portrait-jellina-krasivia-3bf.jpg',
-                'https://i.pinimg.com/736x/be/b9/80/beb9802668755f0e39d1af6aad690c96.jpg',
-              ]}
-              speakersCount={2}
-            />
-          </a>
-        </Link>
+      <div id={s.rooms}>
+        {rooms.map((room) => (
+          <Link key={room.id} href={`/rooms/${room.id}`}>
+            <a className={s.roomCard}>
+              <RoomCard
+                id={room.id}
+                title={room.title}
+                listeners={room.listeners}
+                listenersCount={room.listenersCount}
+                speakersAvatars={room.speakersAvatars}
+                speakersCount={room.speakersCount}
+              />
+            </a>
+          </Link>
+        ))}
       </div>
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data }: { data: IRoomCardProps[] } = await axios.get(
+    'http://localhost:3000/rooms.json'
+  );
+  return {
+    props: { rooms: data },
+  };
 };
 
 export default Rooms;

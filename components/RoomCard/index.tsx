@@ -1,14 +1,7 @@
 import React, { FC } from 'react';
+import { IRoomCardProps } from '../../types';
 import Avatar from '../Avatar';
 import s from './RoomCard.module.css';
-
-interface IRoomCardProps {
-  title: string;
-  listeners: string[];
-  listenersCount: number;
-  speakersAvatars: string[];
-  speakersCount: number;
-}
 
 const RoomCard: FC<IRoomCardProps> = ({
   title,
@@ -24,12 +17,13 @@ const RoomCard: FC<IRoomCardProps> = ({
         <div className={s.avatars}>
           {speakersAvatars.map((url, i) => (
             <Avatar
+              // eslint-disable-next-line react/no-array-index-key
+              key={url}
               className={
                 speakersAvatars.length > 1 && i === speakersAvatars.length - 1
                   ? s.lastAvatar
                   : ''
               }
-              key={url}
               src={url}
               alt="avatar"
               width={45}

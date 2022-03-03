@@ -32,7 +32,12 @@ const ChooseAvatarStep: FC<IStepProps> = ({ onNextStep }) => {
           onChange={onFileChange}
           hidden
         />
-        <button onClick={onNextStep} disabled={!avatarSrc} type="submit">
+        <button
+          className="nextButton"
+          onClick={onNextStep}
+          disabled={!avatarSrc}
+          type="submit"
+        >
           Next
           <img src="/static/forward-arrow.svg" alt="next" />
         </button>

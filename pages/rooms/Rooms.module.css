@@ -1,19 +1,53 @@
+#rooms {
+  column-count: 4;
+  column-gap: 1rem;
+}
+
+.roomCard {
+  display: grid;
+  margin-bottom: 1rem;
+  break-inside: avoid;
+}
+
+.room {
+  padding: 2rem;
+}
+
 #menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-#startRoomButton {
+#startButton {
   background-color: #20bd5f;
 }
 
-#startRoomButton:hover {
+#startButton:hover {
   background-color: #22c965;
 }
 
-#startRoomButton:active {
+#startButton:active {
   background-color: #20b65c;
-  transform: translateY(1px);
+}
+
+#leaveButton {
+  font-weight: 600;
+  background-color: #ebe9e9;
+  color: #e74c3c;
+  display: flex;
+  align-items: center;
+}
+
+#leaveButton:hover {
+  background-color: #f1f0f0;
+}
+
+#leaveButton:active {
+  background-color: #e6e4e4;
+}
+
+#leaveButton img {
+  margin-right: 0.5rem;
 }

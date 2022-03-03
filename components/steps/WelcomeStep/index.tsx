@@ -22,7 +22,12 @@ const WelcomeStep: FC<IStepProps> = ({ onNextStep }) => {
           <br />
           gradually to make sure nothing breaks :)
         </p>
-        <button id={s.loginButton} onClick={onNextStep} type="button">
+        <button
+          id={s.loginButton}
+          className="nextButton"
+          onClick={onNextStep}
+          type="button"
+        >
           Get your username
           <img src="/static/forward-arrow.svg" alt="next" />
         </button>
